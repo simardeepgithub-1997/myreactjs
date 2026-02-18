@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -7,6 +8,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,6 +16,7 @@ const Login = () => {
       setError('');
       setLoading(true);
       await login(email, password);
+      navigate('/');
     } catch (err) {
       setError(err.message);
     } finally {
@@ -49,6 +52,9 @@ const Login = () => {
             {loading ? 'Logging in...' : 'Log In'}
           </button>
         </form>
+        <div className="auth-footer">
+          Don't have an account? <Link to="/signup" className="link-btn">Sign Up</Link>
+        </div>
       </div>
     </div>
   );

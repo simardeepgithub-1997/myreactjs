@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Signup = ({ toggleAuthMode }) => {
+const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -9,6 +10,7 @@ const Signup = ({ toggleAuthMode }) => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { signup } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const Signup = ({ toggleAuthMode }) => {
       setError('');
       setLoading(true);
       await signup(email, password, name);
+      navigate('/');
     } catch (err) {
       setError(err.message);
     } finally {
@@ -75,7 +78,7 @@ const Signup = ({ toggleAuthMode }) => {
           </button>
         </form>
         <div className="auth-footer">
-          Already have an account? <button className="link-btn" onClick={toggleAuthMode}>Log In</button>
+          Already have an account? <Link to="/login" className="link-btn">Log In</Link>
         </div>
       </div>
     </div>
