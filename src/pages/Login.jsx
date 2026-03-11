@@ -26,6 +26,7 @@ const Login = () => {
 
   return (
     <div className="auth-container">
+      <Link to="/" className="auth-back">← Back to portfolio</Link>
       <div className="auth-card">
         <h2>Login</h2>
         {error && <div className="error-message">{error}</div>}

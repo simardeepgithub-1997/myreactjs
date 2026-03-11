@@ -1,0 +1,27 @@
+.blockchain-chat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  max-width: 720px;
+}
+
+.blockchain-chat-card p {
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  line-height: 1.75;
+}
+
+.blockchain-chat-card p:last-child {
+  margin-bottom: 0;
+}
+
+.blockchain-chat-lead {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.blockchain-chat-card strong {
+  color: var(--accent);
+  font-weight: 600;
+}

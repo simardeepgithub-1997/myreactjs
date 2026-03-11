@@ -1,0 +1,22 @@
+.github-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  max-width: 520px;
+}
+
+.github-card p {
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.github-link {
+  font-weight: 500;
+  display: inline-block;
+}
+
+.github-link:hover {
+  text-decoration: underline;
+}

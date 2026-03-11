@@ -1,0 +1,22 @@
+.strengths-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.strength-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color var(--transition);
+}
+
+.strength-item:hover {
+  border-color: var(--accent);
+}

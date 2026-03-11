@@ -1,0 +1,21 @@
+.ai-workflow-content p {
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  line-height: 1.75;
+}
+
+.ai-workflow-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.ai-list {
+  color: var(--text-muted);
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+  line-height: 1.8;
+}
+
+.ai-list li::marker {
+  color: var(--accent);
+}

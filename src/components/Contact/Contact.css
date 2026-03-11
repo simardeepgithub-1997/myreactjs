@@ -1,0 +1,37 @@
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 400px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.contact-item:hover {
+  color: var(--accent);
+}
+
+.contact-item-static {
+  cursor: default;
+}
+
+.contact-item-static:hover {
+  color: var(--text);
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.contact-value {
+  font-size: 1rem;
+}

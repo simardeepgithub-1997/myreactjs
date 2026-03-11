@@ -1,0 +1,15 @@
+.about-content p {
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+  max-width: 680px;
+  line-height: 1.75;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
