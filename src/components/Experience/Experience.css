@@ -7,6 +7,11 @@
   gap: 1.25rem;
   padding-bottom: 2rem;
   position: relative;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item:hover {
+  transform: translateX(4px);
 }
 
 .timeline-item:last-child {
@@ -30,6 +35,12 @@
   background: var(--accent);
   flex-shrink: 0;
   margin-top: 2px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.25);
+  box-shadow: 0 0 16px rgba(88, 166, 255, 0.5);
 }
 
 .timeline-content h3 {

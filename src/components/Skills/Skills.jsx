@@ -2,6 +2,12 @@ import './Skills.css';
 
 const PRIMARY = [
   'React Native',
+  'Blockchain',
+  'Smart Contracts',
+  'Web3',
+  'Wallet integrations',
+  'Performance optimization',
+  'Native Android/iOS integration',
   'JavaScript',
   'TypeScript',
   'REST APIs',

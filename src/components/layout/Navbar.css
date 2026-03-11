@@ -20,10 +20,12 @@
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--text);
+  transition: color 0.2s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-brand:hover {
   color: var(--accent);
+  transform: scale(1.02);
 }
 
 .nav-toggle {
@@ -35,6 +37,11 @@
   padding: 8px;
   cursor: pointer;
   color: var(--text);
+  transition: transform 0.2s ease;
+}
+
+.nav-toggle:hover {
+  transform: scale(1.1);
 }
 
 .nav-toggle span {
@@ -61,11 +68,29 @@
   padding: 0.5rem 0.75rem;
   cursor: pointer;
   font-family: inherit;
-  transition: color var(--transition);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.25rem;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1px;
 }
 
 .nav-link:hover {
   color: var(--text);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-btn {

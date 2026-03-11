@@ -4,6 +4,12 @@
   border-radius: var(--radius);
   padding: 1.5rem;
   max-width: 520px;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.github-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .github-card p {
@@ -15,8 +21,10 @@
 .github-link {
   font-weight: 500;
   display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
 }
 
 .github-link:hover {
   text-decoration: underline;
+  transform: translateX(4px);
 }

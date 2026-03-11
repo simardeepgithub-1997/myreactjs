@@ -10,11 +10,15 @@
   flex-direction: column;
   gap: 0.25rem;
   color: var(--text);
-  transition: color var(--transition);
+  transition: color 0.2s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-item:hover {
   color: var(--accent);
+}
+
+a.contact-item:hover {
+  transform: translateX(6px);
 }
 
 .contact-item-static {
@@ -23,6 +27,7 @@
 
 .contact-item-static:hover {
   color: var(--text);
+  transform: none;
 }
 
 .contact-label {
