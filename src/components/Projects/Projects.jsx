@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import './Projects.css';
 import gems01 from '../../assets/projects/gems-pocket/gems-01.jpg';
 import gems02 from '../../assets/projects/gems-pocket/gems-02.jpg';
@@ -74,6 +75,21 @@ const FEATURED_APPS = [
 ];
 
 const Projects = () => {
+  const [previewImage, setPreviewImage] = useState(null);
+
+  useEffect(() => {
+    if (!previewImage) return undefined;
+
+    const onEscape = (event) => {
+      if (event.key === 'Escape') {
+        setPreviewImage(null);
+      }
+    };
+
+    window.addEventListener('keydown', onEscape);
+    return () => window.removeEventListener('keydown', onEscape);
+  }, [previewImage]);
+
   return (
     <section className="projects section" id="projects">
       <h2 className="section-title">Featured Mobile Apps</h2>
@@ -91,13 +107,20 @@ const Projects = () => {
             {app.images?.length ? (
               <div className="project-gallery" aria-label={`${app.name} screenshots`}>
                 {app.images.map((img, index) => (
-                  <img
+                  <button
                     key={`${app.name}-img-${index + 1}`}
-                    src={img}
-                    alt={`${app.name} screenshot ${index + 1}`}
-                    className="project-gallery-image"
-                    loading="lazy"
-                  />
+                    type="button"
+                    className="project-gallery-button"
+                    onClick={() => setPreviewImage({ src: img, alt: `${app.name} screenshot ${index + 1}` })}
+                    aria-label={`Open ${app.name} screenshot ${index + 1}`}
+                  >
+                    <img
+                      src={img}
+                      alt={`${app.name} screenshot ${index + 1}`}
+                      className="project-gallery-image"
+                      loading="lazy"
+                    />
+                  </button>
                 ))}
               </div>
             ) : null}
@@ -112,6 +135,24 @@ const Projects = () => {
           </article>
         ))}
       </div>
+      {previewImage ? (
+        <div className="image-lightbox" role="dialog" aria-modal="true" onClick={() => setPreviewImage(null)}>
+          <button
+            type="button"
+            className="image-lightbox-close"
+            onClick={() => setPreviewImage(null)}
+            aria-label="Close image preview"
+          >
+            ×
+          </button>
+          <img
+            src={previewImage.src}
+            alt={previewImage.alt}
+            className="image-lightbox-preview"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      ) : null}
     </section>
   );
 };
