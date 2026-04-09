@@ -74,6 +74,41 @@ const FEATURED_APPS = [
   },
 ];
 
+const NEW_WEBSITES = [
+  {
+    name: 'The PathShala School',
+    industry: 'Education',
+    techStack: 'React.js, CSS',
+    githubUrl: 'https://github.com/simardeepgithub-1997/thepathshalaschool.git',
+    liveUrl: 'https://thepathshalaschool.vercel.app/',
+    description: 'Complete, responsive React landing page for a public high school in Amritsar.'
+  },
+  {
+    name: 'K.M Enterprises',
+    industry: 'Industrial',
+    techStack: 'React.js, Vite, CSS',
+    githubUrl: 'https://github.com/simardeepgithub-1997/kmenterprisesamritsar',
+    liveUrl: 'https://kmenterprisesamritsar.vercel.app/',
+    description: 'Professional product and services showcase for an industrial manufacturing business.'
+  },
+  {
+    name: 'Nagi Industries',
+    industry: 'Industrial',
+    techStack: 'React.js, Vite, CSS',
+    githubUrl: 'https://github.com/simardeepgithub-1997/nagiindustriesamritsar',
+    liveUrl: 'https://nagiindustriesamritsar.vercel.app/',
+    description: 'Modern landing page utilizing highly dynamic web layouts and direct client engagement.'
+  },
+  {
+    name: 'S&S Cleaning Services',
+    industry: 'Service',
+    techStack: 'React.js, Vite, CSS',
+    githubUrl: 'https://github.com/simardeepgithub-1997/cleaningservicesbrampton.canada',
+    liveUrl: 'https://cleaningservicesbramptoncanada.vercel.app/',
+    description: 'Premium cleaning services landing page with a direct integration contact form and UI alerts.'
+  }
+];
+
 const Projects = () => {
   const [previewImage, setPreviewImage] = useState(null);
 
@@ -132,6 +167,41 @@ const Projects = () => {
             >
               View on Play Store →
             </a>
+          </article>
+        ))}
+      </div>
+
+      <h2 className="section-title" style={{ marginTop: '80px' }}>New Websites</h2>
+      <div className="projects-grid">
+        {NEW_WEBSITES.map((site) => (
+          <article key={site.name} className="project-card">
+            <div className="project-card-header">
+              <h3 className="project-name">{site.name}</h3>
+              <span className={`project-industry project-industry-web`}>
+                {site.industry}
+              </span>
+            </div>
+            <p className="project-tech">{site.techStack}</p>
+            <p className="project-desc">{site.description}</p>
+            <div style={{ display: 'flex', gap: '15px', marginTop: 'auto', flexWrap: 'wrap' }}>
+              <a
+                href={site.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+              >
+                Live Demo ↗
+              </a>
+              <a
+                href={site.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+                style={{ backgroundColor: 'transparent', color: 'var(--text-color)', }}
+              >
+                GitHub Repo ↗
+              </a>
+            </div>
           </article>
         ))}
       </div>
